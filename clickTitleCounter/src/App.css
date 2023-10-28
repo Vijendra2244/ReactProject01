@@ -1,0 +1,18 @@
+.timerHeading {
+  background-color: black;
+  display: inline-block;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+}
+.add{
+  background-color: aqua;
+  color: black;
+  border-radius: 8px;
+  padding: 5px;
+  cursor: pointer;
+  border: none;
+}
+
