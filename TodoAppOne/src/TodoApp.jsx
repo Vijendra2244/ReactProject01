@@ -1,21 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
-async function getData(url) {
-  try {
-    let response = await axios.get(url);
-    const totalCount = Number(response.headers["x - total - count"]);
-    const totalPages = Math.ceil(totalCount / 10);
-    return { data: response?.data, totalPages: totalPages };
-  } catch (error) {
-    console.log(error);
-  }
-}
+import "./App.css"
 
 function TodoApp() {
   const [userList, setUserList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   useEffect(
@@ -27,11 +17,12 @@ function TodoApp() {
   async function fetchData(page) {
     setLoading(true);
     try {
-      let response = await getData(
+      let response = await axios.get(
         `https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}`
       );
-      const { data, totalPages } = response;
-      setUserList(data);
+      const totalCount = Number(response.headers["x-total-count"]);
+      const totalPages = Math.ceil(totalCount / 10);
+      setUserList(response.data);
       setTotalPages(totalPages);
       setLoading(false);
     } catch (error) {
@@ -47,26 +38,26 @@ function TodoApp() {
   }
 
   return (
-    <>
-      <h1>User's posts</h1>
+    <div className="postContainer">
+      <h1 className="userPost">User's posts</h1>
       {userList &&
         userList.length > 0 &&
         userList.map((user) => (
-          <div key={user.id}>
-            <h1>{user.title}</h1>
+          <div className="userData" key={user.id}>
+            <h4 className="userPostData">{user.id}.{user.title}</h4>
           </div>
         ))}
-      <button disabled={page == 1} onClick={() => setPage(page - 1)}>
+        <div className="pagination">
+
+      <button className="prev" disabled={page == 1} onClick={() => setPage(page - 1)}>
         Previous
       </button>
-      <p>current page : {page}</p>
-      <button
-        disabled={page === totalPages}
-        onClick={() => setPage(page + 1)}
-      >
+      <p className="current">{page}</p>
+      <button className="next" disabled={page === totalPages} onClick={() => setPage(page + 1)}>
         Next
       </button>
-    </>
+        </div>
+    </div>
   );
 }
 

@@ -1,0 +1,73 @@
+.postContainer {
+  background-color: rgb(3, 3, 3);
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 0.5rem;
+}
+.userPost {
+  text-align: center;
+  background-color: black;
+  color: white;
+  border: 5px solid white;
+  border-radius: 8px;
+  width: 25%;
+  margin: 1rem auto;
+}
+.userData {
+  background-color: white;
+  color: black;
+  display: flex;
+  margin: 0.2rem auto;
+  border-radius: 8px;
+}
+.userPostData {
+  margin: 0.3rem;
+  padding: 0.3rem;
+}
+.pagination {
+  display: flex;
+}
+.prev {
+  background-color: rgb(101, 18, 209);
+  color: black;
+  width: 10%;
+  margin: 0.2rem auto;
+  padding: 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: none;
+}
+.current {
+  text-align: center;
+  background-color: rgb(61, 187, 59);
+  color: black;
+  width: 8%;
+  margin: 0.2rem auto;
+  padding: 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: none;
+}
+.next {
+  background-color: rgb(101, 18, 209);
+  color: black;
+  width: 10%;
+  margin: 0.2rem auto;
+  padding: 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+
+  border: none;
+}
+.next:disabled {
+  color: rgb(42, 37, 37);
+  background-color: rgb(122, 84, 171);
+}
+.prev:disabled{
+    color: rgb(42, 37, 37);
+    background-color: rgb(122, 84, 171);
+}
