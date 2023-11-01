@@ -3,19 +3,20 @@ import React, { useState } from "react";
 function Timer() {
   const [seconds, setSeconds] = useState(60);
   const [minutes, setMinutes] = useState(10);
-  const [timerStartAgain,setTimerStartAgain]=useState(null);
-
+  const [timerStartAgain, setTimerStartAgain] = useState(null);
 
   function StartTiming() {
     const interval = setInterval(() => {
-      setSeconds((second) => second - 1);
-      if (seconds == 1) {
-        setMinutes((minute) => minute - 1);
-        setSeconds(60);
-      }
-
+      setSeconds((second) => {
+        if (second === 59) {
+          setMinutes(minute=>minute + 1);
+          setSeconds(60)
+        }
+        second + 1;
+      });
     }, 1000);
-    setTimerStartAgain(interval)
+    setTimerStartAgain(interval);
+    
   }
 
   function RestartTiming() {
@@ -23,9 +24,9 @@ function Timer() {
     setMinutes(10);
   }
   function StopTiming() {
-    console.log("stop")
+    console.log("stop");
     clearInterval(timerStartAgain);
-    setTimerStartAgain(null) 
+    setTimerStartAgain(null);
   }
   return (
     <>

@@ -1,0 +1,77 @@
+.btn{
+    border: none;
+    border-radius: 8px;
+    color: rgb(253, 253, 253);
+    background-color: red;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    margin: 0.6rem 0;
+}
+.btnOne{
+    border: none;
+    border-radius: 8px;
+    color: rgb(253, 253, 253);
+    background-color: red;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    margin-left: 10rem;
+}
+.btn:disabled{
+    background-color: rgb(151, 59, 59);
+}
+.btnOne:disabled{
+    background-color: rgb(151, 59, 59);
+}
+.btnAdd{
+    border: none;
+    border-radius: 8px;
+    color: rgb(253, 253, 253);
+    background-color:green;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    margin: 0.6rem;
+  
+}
+.input{
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+.btnDelete{
+    color: white;
+    background-color: rgb(231, 36, 36);
+    padding: 0.3rem;
+    border: none;
+    border-radius: 0.4rem;
+    margin:   0.2rem 0.4rem ;
+    cursor: pointer;
+}
+.btnToggle{
+    color: white;
+    background-color:rgb(40, 204, 40);
+    padding: 0.3rem;
+    border: none;
+    border-radius: 0.4rem;
+    margin:   0.2rem 0.4rem ;
+    cursor: pointer;
+}
+.task{
+    display: inline-block;
+   border: 1px solid black;
+   padding: 0.5rem;
+   border-radius: 9px;
+   margin: 0.4rem 0;
+}
+.main{
+    border: 2px solid black;
+    border-radius:10px ;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+   
+}
