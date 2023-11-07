@@ -16,11 +16,5 @@
   "profile": {
     "name": "typicode"
   },
-  "tasks": [
-    {
-      "title": "larnc html",
-      "status": false,
-      "id": 1
-    }
-  ]
+  "tasks": []
 }
